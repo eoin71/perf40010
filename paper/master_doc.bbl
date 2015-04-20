@@ -1,0 +1,24 @@
+\begin{thebibliography}{1}
+
+\bibitem{model_server_settings_jee}
+D.~Draheim and G.~Weber.
+\newblock Modeling the effect of application server settings on the performance
+  of j2ee web applications.
+\newblock In {\em Lecture Notes in Computer Science}, pages 202--216.
+  Springer-Verlag, 2006.
+
+\bibitem{master_the_boss}
+F.~Marchioni.
+\newblock Mastering the boss.
+\newblock Website.
+\newblock
+  http://www.mastertheboss.com/en/jboss-application-server/113-jboss-performan%
+ce-tuning-1.html.
+
+\bibitem{performance_solutions}
+C.~Smith and L.~Williams.
+\newblock {\em Performance Solutions, A practical guide to creating responsive,
+  scalable software}.
+\newblock Addison Wesley, 2002.
+
+\end{thebibliography}

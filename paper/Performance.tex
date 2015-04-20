@@ -1,0 +1,55 @@
+\documentclass[10pt,a4paper,titlepage]{report}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{multirow}
+\pagestyle{fancy}
+
+
+\begin{document}
+\title{Performance Testing of the AdaptiveCells/J Application}
+\author{Van Hung Cao \and Eoin Hyland}
+\maketitle
+
+\begin{abstract}
+With the advent, and growth in popularity, of JEE applications performance testing and optimisation has become an important part of development cycle. This assignment investigates the performance of the AdaptiveCells/J application, utilising black-box testing. We assess performance and then carry out optimisation on various parts of the application stack. Based on the observed test results we formulate a model that gives results acceptably close to our observations.
+\end{abstract}
+
+% Exec section
+\include{ch_execsummary}
+
+% Contents
+
+\tableofcontents
+
+% main chapters
+
+%Technical sections
+
+\include{ch_introduction}
+
+\include {ch_plan}
+
+\include{ch_functional_testing}
+
+\include{ch_loadtesting}
+
+\include{ch_stresstesting}
+
+\include{ch_optimise}
+
+\include{ch_modelling}
+
+% appendicies
+\appendix
+
+\include{app_adaptivecellsj}
+
+\include{app_bean_configs}
+
+\include{app_structure_JEE_app}
+
+% bibliography using bibtex
+
+\bibliographystyle{plain}
+\bibliography{biblio}
+\end{document}

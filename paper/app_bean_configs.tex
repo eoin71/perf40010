@@ -1,0 +1,43 @@
+\chapter{Configurations}
+
+\section*{Overview}
+
+Using tools such as the jmx-console we were able to gain further insight into the ten configurations of our application. The table below sumarises the bean parameters for each of the ten configurations:
+
+\begin{center}
+\begin{tabular}{| c | l | r | r | r | r | r | r |}
+ \hline
+ \multicolumn{2}{|c|}{} & \multicolumn{6}{|c|}{Bean} \\
+ \hline
+ Config & Parameter & TB1 & TB2 & TB3 & TB4 & TB5 & TB6 \\ \hline
+ \multirow{3}{*}{1} & CPU & 1,000 & 2,000 & 3,000 & & &  \\
+  & Memory & 100 & 200 & 300 & & & \\ 
+  & Memory Leak & 10,000 & & & & & \\ \hline
+ \multirow{3}{*}{2} & CPU & 1,000 & & 3,000 & & & 9,000 \\
+  & Memory & 100 & & 300 & & & 900 \\ 
+  & Memory Leak & 10,000 & & & & & \\ \hline
+ \multirow{2}{*}{3} & CPU & 1,000 & 2,000 & & 5,000 & & \\
+  & Memory & 100 & 200 & & 500 & & \\\hline
+ \multirow{3}{*}{4} & CPU & 1,000 & & 3,000 & & 7,000 & \\
+  & Memory & 100 & & 300 & & 700 & \\
+  & Exception & & & & & Yes & \\ \hline
+ \multirow{3}{*}{5} & CPU & 1,000 & 2,000 & & 5,000 & & \\
+  & Memory & 100 & 200 & & 500 & & \\
+  & Exception & & & & Yes & & \\ \hline
+ \multirow{2}{*}{6} & CPU & 1,000 & 2,000 & 3,000 & 5,000 & 7,000 & 9,000 \\
+  & Memory & 100 & 200 & 300 & 500 & 700 & 900 \\ \hline
+ \multirow{2}{*}{7} & CPU & 1,000 & & 3,000 & & & 9,000 \\
+  & Memory & 100 & & 300 & & & 900 \\ \hline
+\multirow{2}{*}{8} & CPU & 1,000 & & 3,000 & & & 9,000 \\
+  & Memory & 100 & & 300 & & & 900 \\ \hline
+\multirow{3}{*}{9} & CPU & 1,000 & 2,000 & & 5,000 & &  \\
+  & Memory & 100 & 200 & & 500 & & \\ 
+  & Memory Leak & 10,000 & & & & & \\ \hline
+ \multirow{2}{*}{10} & CPU & 1,000 & & 3,000 & & 7,000 & 9,000 \\
+  & Memory & 100 & & 300 & & 700 & 900 \\ \hline
+\end{tabular}
+\end{center}
+
+
+
+

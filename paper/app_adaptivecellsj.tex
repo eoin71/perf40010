@@ -1,0 +1,38 @@
+\chapter{AdaptiveCells/J}
+
+\section*{Overview of AdaptiveCells/J}
+AdaptiveCells/J is a J2EE, open source\footnote{download from http://www.adaptivecellsj.sourceforge.net}, benchmarking system, allowing development of an artificial testbed without creating code. For the purposes of this project we were using the the application for performance testing of our application in different contexts.
+
+AdaptiveCells/J test-beds allow specification of precisely timed faults to occur, with behaviour fully configurable at runtime by selecting a configuration. The following behaviour can be replicated:
+
+\begin{itemize}
+\item CPU usage behaviour;
+\item memory allocation;
+\item memory leaks;
+\item raising exceptions.
+\end{itemize}
+
+\section*{Description}
+The AdaptiveCells/J framework consists of structurally identical EJBs, that are customised by a deployment descriptor. The deployment descriptor specifies values for key parameters:
+\begin{itemize}
+ \item CPU overhead (integer value of the number of repetitions that a pseudo random number is generated);
+ \item Memory overhead (the size of byte arrary allocated when the EJB is called);
+ \item Memory leak (size of the block to be allocated and leaked);
+ \item Exception to be raised;
+ \item First target EJB (the first EJB to call);
+ \item Second target EJB (the second EJB to call);
+\end{itemize}
+These parameters configure the runtime behaviour and footprint of each bean. 
+
+Each bean simulates a 'real' EJB by emulating load (CPU and memory), and calling other beans in a specified calling sequence. Each bean can have a number of configurations, each one optionally specifying values for the above parameters. Each configuration is identified by a configuration name. The same configuration name should be used for each bean participating in a particular calling sequence e.g. 'config1'. 
+
+Each bean exposes a single method simulateBusinessLogic(), which takes the configuration name as a parameter. The bean will then read the parameters for that configuration and then generate the appropriate CPU and memory overhead, and then call the specified target EJBs.
+
+\section*{Structure}
+The application is comprised of: 
+\begin{itemize}
+ \item A presentation tier (a Servlet);
+ \item A business logic tier (a number of Session Beans, with a set of configurations, each configureation specify one set of the above parameters for each bean).
+\end{itemize}
+
+The web front-end to the application is an html page, where the configuration to be tested is specified by the user, and a servlet. This configuration enables web-based stress and loading tools to be used to simulate sets of simultaneous users. The first bean that is called by the front end is, by convention, called TB1. Complicated calling sequences can be built up with the first target and second target parameters. There is no mechanism to support loops in the calling sequence.
