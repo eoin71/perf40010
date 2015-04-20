@@ -1,0 +1,25 @@
+\chapter{Modelling}
+
+\section{Introduction}
+
+Up to this point we have been analysing the performance of the application by empirical measurement. This has yielded some good results and assisted us in optimising the application. Problems with this approach in isolation are:
+
+\begin{enumerate}
+ \item We may want to simulate use cases where we will not have the hardware necessary to support the test;
+ \item We can get greater insight into what is happening in different parts of the system with a model - helping us identify bottlenecks and explain exceptional observed results.
+\end{enumerate}
+
+In this section we will contruct a model of the AdaptiveCells/J application, using a tool that models queueing networks called JMT. The structure of the model will come directly from the application structure. Model parameters will come from similar measurements that we made in previous sections. Once we have constructed the model we will compare the output of the model, under different loads, with the actual measured experience.
+
+\section{Methodology}
+
+For the purposes of building the model we will simplify our simulation used in the optimisation section and use a similar model to that used in the loading section. We will simplify by eliminating the process of obtaining the static pages, and just go straight to the part that submits the config chosen to the application.
+The model we will contruct will be based on the structure of the JBOSS application\footnote{see appendices} with the following characteristics:
+
+\begin{itemize}
+ \item a server node representing the Tomcat embedded webserver, with a queue size and number of servers taken from the JBOSS configuration;
+ \item a server node representing the EJB tier with parameters taken from the observed values of tests;
+ \item the model will be closed, as this more closely matches the use cases we are working with - a fixed number of users submitting a request, thinking and then submitting another request.
+\end{itemize}
+
+The modelling tool allows us the set the size of queues, the number of servers (corresponding to thread pools), and service time of each node. 
